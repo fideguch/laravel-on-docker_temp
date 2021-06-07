@@ -6,8 +6,6 @@ services:
     build: ./docker/php
     volumes:
       - ./web:/var/www
-      - vendor-store:/var/www/laravel/vendor
-      - node_modules-store:/var/www/laravel/node_modules
     env_file:
       - ./env/db.env
 
@@ -34,7 +32,3 @@ services:
       - ./docker/db/sql:/docker-entrypoint-initdb.d
     ports:
       - 3306:3306
-
-volumes:
-  vendor-store:
-  node_modules-store:
